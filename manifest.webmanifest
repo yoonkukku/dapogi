@@ -5,12 +5,5 @@
   "display": "standalone",
   "background_color": "#f4f1e8",
   "theme_color": "#f4f1e8",
-  "lang": "ko-KR",
-  "icons": [
-    {
-      "src": "icon.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "lang": "ko-KR"
 }
