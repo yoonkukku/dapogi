@@ -1,9 +1,1 @@
-{
-  "name": "다포기하지마",
-  "short_name": "다포기",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f4f1e8",
-  "theme_color": "#f4f1e8",
-  "lang": "ko-KR"
-}
+{"name":"다포기하지마","short_name":"다포기","start_url":"./","display":"standalone","background_color":"#f4f1e8","theme_color":"#f4f1e8","lang":"ko-KR"}

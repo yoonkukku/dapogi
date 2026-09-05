@@ -1,46 +1,22 @@
-<!doctype html><html lang="ko"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f4f1e8"><meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.webmanifest"><title>다포기하지마</title>
-<style>
-body{margin:0;background:#f4f1e8;color:#27352b;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif}
-main{max-width:520px;margin:auto;padding:22px 16px 90px}.screen{display:none}.on{display:block}
-.card{background:#fffdf8;border:1px solid #dfe5dc;border-radius:24px;padding:20px;margin:12px 0}
-.sloth{font-size:60px}.title{font-size:30px;font-weight:900;line-height:1.2;margin:12px 0}.sub{color:#728078;line-height:1.6}
-button,input{font:inherit}button{width:100%;min-height:54px;border:0;border-radius:16px;padding:14px 16px;font-weight:850;background:#b9d8b5;color:#27352b;margin-top:10px}
-button.alt{background:#fff;border:1px solid #dfe5dc}input{width:100%;min-height:54px;border:1px solid #dfe5dc;border-radius:16px;padding:14px;font-size:16px;box-sizing:border-box}
-.promise div,.mission{background:#e8f2e5;border-radius:16px;padding:13px 14px;margin:9px 0}.mission{background:#fff4bf}.small{font-size:13px;color:#728078}
-.step{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid #dfe5dc}.step:last-child{border-bottom:0}.dot{width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid #dfe5dc;display:flex;align-items:center;justify-content:center;flex:none;font-weight:800}.now .dot{background:#b9d8b5}
-.big{font-size:28px;font-weight:900}.done{text-align:center}.badge{display:inline-block;background:#e8f2e5;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:850}
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>다포기하지마 v0.7</title><style>
+body{margin:0;background:#f4f1e8;color:#26352b;font-family:-apple-system,sans-serif}main{max-width:520px;margin:auto;padding:20px 16px}.s{display:none}.on{display:block}.c{background:#fffdf8;border:1px solid #dfe5dc;border-radius:24px;padding:20px;margin:12px 0}.t{font-size:29px;font-weight:900;line-height:1.2}.sub{color:#718078;line-height:1.55}.sl{font-size:54px}input,button{width:100%;box-sizing:border-box;padding:15px;border-radius:16px;font:inherit;margin-top:10px}input{border:1px solid #ddd}button{border:0;background:#b9d8b5;font-weight:850}button.alt{background:#fff;border:1px solid #ddd}.m{background:#fff2b8;border-radius:18px;padding:17px;margin:15px 0}.m b{font-size:21px}.step{padding:10px 0;border-bottom:1px solid #eee}.now{font-weight:900}.bar{height:10px;background:#e5e8e2;border-radius:9px;overflow:hidden}.fill{height:100%;background:#9fc49b}.center{text-align:center}
 </style></head><body><main>
-<section id="welcome" class="screen on"><div class="card"><div class="sloth">🦥</div><div class="title">자꾸 시작했다가<br>포기하나요?</div>
-<p class="sub">하고 싶은 것 하나만 알려주세요.<br>목표까지 가는 길은 제가 나누고, <b>오늘 해야 할 것 하나만</b> 알려드릴게요.</p>
-<div class="promise"><div>🎯 목표는 잊지 않게</div><div>👣 오늘 할 일은 하나만</div><div>🆘 막히면 다른 길을 찾게</div><div>❤️ 멈춰도 다시 돌아오게</div></div>
-<button onclick="show('goal')">내 목표 시작하기</button></div></section>
-
-<section id="goal" class="screen"><div class="card"><div class="sloth">🦥</div><div class="title">끝까지 해보고 싶은 건 뭐예요?</div>
-<p class="sub">거창할 필요 없어요. 한 문장만 적어주세요.</p><input id="goalInput" placeholder="예: 앱을 하나 만들어 App Store에 올리기">
-<button onclick="makePlan()">이 목표로 시작</button><button class="alt" onclick="show('welcome')">뒤로</button></div></section>
-
-<section id="plan" class="screen"><div class="card"><span class="badge">PROJECT 001</span><div class="small" style="margin-top:14px">🎯 최종 목표</div>
-<div id="goalText" class="title" style="font-size:25px"></div><p class="sub">이제 전체를 고민하지 마세요. <b>지금 어디쯤인지</b>와 <b>다음 한 걸음</b>을 계속 보여드릴게요.</p>
-<div class="step now"><div class="dot">1</div><div><b>목표 고정</b><div class="small">무엇을 끝내고 싶은지 정했어요.</div></div></div>
-<div class="step"><div class="dot">2</div><div><b>길 나누기</b><div class="small">목표를 작은 단계로 나눠요.</div></div></div>
-<div class="step"><div class="dot">3</div><div><b>오늘 한 걸음</b><div class="small">지금 할 수 있는 행동 하나만 실행해요.</div></div></div>
-<div class="step"><div class="dot">4</div><div><b>막힘 탈출</b><div class="small">막히면 더 작게 하거나 다른 길을 찾습니다.</div></div></div>
-<div class="mission"><div class="small">오늘 할 일 · 약 2분</div><b>이 목표를 왜 끝내고 싶은지 한 줄 생각해보기</b></div>
-<button onclick="show('complete')">2분 미션 시작</button><button class="alt" onclick="show('stuck')">🆘 벌써 막혔어</button></div></section>
-
-<section id="stuck" class="screen"><div class="card"><div class="sloth">🦥</div><div class="title">괜찮아요.<br>여기서 끝내진 않을게요.</div>
-<p class="sub">지금 이유를 설명하거나 계획을 다시 짤 필요 없어요.</p><div class="mission"><b>더 작은 행동</b><br>목표 문장만 다시 한 번 보기</div>
-<button onclick="show('complete')">이걸로 오늘 완료</button></div></section>
-
-<section id="complete" class="screen"><div class="card done"><div class="sloth">🦥→</div><div class="big">오늘 이것 하나는 했어요.</div>
-<p class="sub">목표를 정했고, 오늘 해야 할 한 걸음까지 왔습니다.</p><div class="mission"><div class="small">오늘 만든 결과</div><b id="resultGoal"></b></div>
-<span class="badge">🔥 DAY 1</span><p class="sub">오늘은 여기까지 해도 됩니다.<br>다음에 열면 여기서 이어가게 됩니다.</p>
-<button onclick="restart()">처음부터 다시 테스트</button></div></section>
+<section id="start" class="s on"><div class="c"><div class="sl">🦥</div><div class="t">목표만 주세요.<br>다음 한 걸음은 제가 정할게요.</div><p class="sub">전체 계획을 고민하지 않아도 됩니다.</p><input id="g" placeholder="예: 앱을 App Store에 출시하기"><button onclick="create()">목표 시작하기</button></div></section>
+<section id="home" class="s"><div class="c"><small>🎯 목표</small><div class="t" id="gt" style="font-size:23px"></div><div class="bar"><div id="fill" class="fill" style="width:10%"></div></div><p class="sub" id="pos">목표를 시작했어요.</p><div id="road"></div></div><div class="c"><small>👣 지금 할 일 · 약 3분</small><div class="m"><b id="mt"></b><p class="sub" id="mh"></p></div><button onclick="done()">했어요</button><button class="alt" onclick="stuck()">🆘 막혔어</button></div></section>
+<section id="rescue" class="s"><div class="c"><div class="sl">🦥</div><div class="t">막힌 채로 끝내지 않을게요.</div><p class="sub">행동을 더 작게 바꿨어요.</p><div class="m"><b id="rt"></b></div><button onclick="done()">이것은 할 수 있어</button></div></section>
+<section id="complete" class="s"><div class="c center"><div class="sl">🦥→</div><div class="t">한 걸음 전진했어요.</div><p class="sub">오늘 이것 하나는 했어요.</p><button onclick="next()">다음 행동 확인</button><button class="alt" onclick="finish()">오늘은 여기까지</button></div></section>
+<section id="end" class="s"><div class="c center"><div class="sl">🦥</div><div class="t">오늘 완료.</div><p class="sub" id="summary"></p><button onclick="next()">현재 프로젝트 보기</button></div></section>
 </main><script>
-function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('on'));document.getElementById(id).classList.add('on')}
-function makePlan(){let v=document.getElementById('goalInput').value.trim();if(!v){alert('목표를 한 문장만 적어주세요.');return;}localStorage.setItem('dapogi_goal_v06',v);document.getElementById('goalText').textContent=v;document.getElementById('resultGoal').textContent=v;show('plan')}
-function restart(){localStorage.removeItem('dapogi_goal_v06');document.getElementById('goalInput').value='';show('welcome')}
+const K='d07',M=[
+['끝났다고 판단할 수 있는 기준을 한 문장으로 정하기','무엇이 되면 이 목표가 끝인지 정하세요.','목표 문장을 한 번 읽기'],
+['목표까지 필요한 가장 큰 단계 3개 떠올리기','시작·중간·완료 정도면 충분해요.','첫 단계 하나만 떠올리기'],
+['첫 단계에서 3분 안에 할 수 있는 행동 하나 실행하기','아주 작아도 실제 행동이어야 합니다.','30초짜리 행동으로 줄이기'],
+['방금 한 행동으로 무엇이 달라졌는지 확인하기','한 문장으로만 확인하세요.','완료한 행동 이름만 보기'],
+['다음에 막힐 가능성이 큰 지점 하나 확인하기','해결하지 말고 위치만 알아차리세요.','막힐 지점 하나만 떠올리기']];
+function S(x){document.querySelectorAll('.s').forEach(e=>e.classList.remove('on'));document.getElementById(x).classList.add('on')}
+function load(){return JSON.parse(localStorage.getItem(K)||'null')}function save(x){localStorage.setItem(K,JSON.stringify(x))}
+function create(){let g=document.getElementById('g').value.trim();if(!g)return alert('목표를 한 문장만 적어주세요.');let x={g:g,i:0,n:0};save(x);render(x);S('home')}
+function render(x){gt.textContent=x.g;let p=10+x.n*15;fill.style.width=p+'%';pos.textContent=x.n?'오늘 '+x.n+'걸음 전진':'목표를 시작했어요.';let L=['목표 고정','길 나누기','첫 행동','결과 확인','막힘 대비'];road.innerHTML=L.map((v,j)=>'<div class="step '+(j==x.i?'now':'')+'">'+(j<x.i?'✓ ':'')+v+(j==x.i?' ← 지금 여기':'')+'</div>').join('');mt.textContent=M[x.i][0];mh.textContent=M[x.i][1];rt.textContent=M[x.i][2]}
+function done(){let x=load();x.n++;x.i=Math.min(x.i+1,M.length-1);save(x);S('complete')}function stuck(){S('rescue')}function next(){let x=load();render(x);S('home')}function finish(){let x=load();summary.textContent='“'+x.g+'”에서 오늘 '+x.n+'개의 행동을 완료했습니다.';S('end')}
+let x=load();if(x){render(x);S('home')}
 </script></body></html>
